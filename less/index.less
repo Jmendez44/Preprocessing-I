@@ -55,8 +55,8 @@ table {
 
 // Mixins
 
-.custom-layout(@justify, @align) {
-	display: flex;
+.custom-layout(@display, @justify, @align) {
+	display: @display;
 	justify-content: @justify;
 	align-items: @align;
   }
@@ -74,6 +74,10 @@ table {
     text-shadow: 0px 0px 0px transparent;
 }
 
+.noob-border(@color) {
+	border: 1px solid @color;
+}
+
 // General Styles
 
 /* Set every element's box-sizing to border-box */
@@ -83,29 +87,33 @@ table {
 
 html, body {
 	height: 100%;
-
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3 {
 	margin: 15px 0;
-	
+
   }
 
   h1 {
 	  font-size: 50px;
   }
 
+
 //Header 
 
 header {
-	height: 100%;
-	border: 1px solid lightcoral;
+	// .noob-border(coral);
+	max-height: 50%;
+	max-width: 880px;
+	// border: 1px solid lightcoral;
 	display: flex;
 	flex-direction: column;
 	// justify-content: flex-end;
-	margin: 0px 10%;
+	margin: 0px auto;
 	.header-content {
-		height: 50%;
+		max-width: 880px;
+		max-height: 100%;
 		background-color: #E9ECEF;
 	
 		display: flex;
@@ -125,7 +133,7 @@ header {
 			color: white;
 			width: 125px;
 			margin-top: 15px;
-			height: 30px;
+			min-height: 30px;
 			background-color: @resumegrey;
 		}
 	}
@@ -134,6 +142,7 @@ header {
 	}
 	nav {
 		// border: 2px solid lightblue;
+		max-width: 880px;
 		height: 45px;
 		.align(bottom);
 		margin-left:auto;
@@ -146,3 +155,52 @@ header {
 	}	
 }
 
+main {
+	// .noob-border(coral);
+	height: 40%;
+	max-width: 880px;
+	max-height: 50%;
+
+	// border: 1px solid lightcoral;
+	display: flex;
+	margin: 0px auto;
+	flex-wrap: wrap;
+	.top-content {
+		
+		// padding: 10px;
+		display: inline-flex;
+		// margin: 25px;
+		max-width: 100%;
+		margin: 20px;
+		justify-content: space-between;
+		
+		.about-me {
+			
+			// border: 1px solid lightcoral;
+			display: block;
+			width: 40%;
+		}
+		.skills {
+			padding: 10px;
+			width: 40%;
+		}
+	}
+	
+}
+
+footer {
+	// .noob-border(green);
+	width: 880px;
+	max-height: 50%;
+
+	display: flex;
+	height: 10%;
+	margin: 0px auto 0px auto;
+	.custom-layout(flex, center, center);
+	background-color: @resumegrey;
+	div {
+		margin: 20px;
+		color: white;
+		text-align: center;
+	}
+}

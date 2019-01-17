@@ -133,6 +133,7 @@ table {
 html,
 body {
   height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
 }
 h1,
 h2,
@@ -143,14 +144,15 @@ h1 {
   font-size: 50px;
 }
 header {
-  height: 100%;
-  border: 1px solid lightcoral;
+  max-height: 50%;
+  max-width: 880px;
   display: flex;
   flex-direction: column;
-  margin: 0px 10%;
+  margin: 0px auto;
 }
 header .header-content {
-  height: 50%;
+  max-width: 880px;
+  max-height: 100%;
   background-color: #E9ECEF;
   display: flex;
   flex-direction: column;
@@ -171,13 +173,14 @@ header .header-content button {
   color: white;
   width: 125px;
   margin-top: 15px;
-  height: 30px;
+  min-height: 30px;
   background-color: #808080;
 }
 header img {
   width: 20%;
 }
 header nav {
+  max-width: 880px;
   height: 45px;
   display: flex;
   align-items: bottom;
@@ -185,4 +188,41 @@ header nav {
 }
 header nav a {
   margin: 20px;
+}
+main {
+  height: 40%;
+  max-width: 880px;
+  max-height: 50%;
+  display: flex;
+  margin: 0px auto;
+  flex-wrap: wrap;
+}
+main .top-content {
+  display: inline-flex;
+  max-width: 100%;
+  margin: 20px;
+  justify-content: space-between;
+}
+main .top-content .about-me {
+  display: block;
+  width: 40%;
+}
+main .top-content .skills {
+  padding: 10px;
+  width: 40%;
+}
+footer {
+  width: 880px;
+  max-height: 50%;
+  height: 10%;
+  margin: 0px auto 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #808080;
+}
+footer div {
+  margin: 20px;
+  color: white;
+  text-align: center;
 }
