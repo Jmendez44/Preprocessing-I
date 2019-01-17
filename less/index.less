@@ -48,12 +48,159 @@ table {
 	border-spacing: 0;
 }
 
+// Variables
+
+@resumegrey:#808080;
+
+
+// Mixins
+
+.custom-layout(@display, @justify, @align) {
+	display: @display;
+	justify-content: @justify;
+	align-items: @align;
+  }
+
+.align(@position){
+	display: flex;
+	align-items: @position;
+}
+
+.reset-btn(){
+	box-shadow: 0px 0px 0px transparent;
+
+    border: 0px solid transparent;
+
+    text-shadow: 0px 0px 0px transparent;
+}
+
+.noob-border(@color) {
+	border: 1px solid @color;
+}
+
+// General Styles
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
+h1, h2, h3 {
+	margin: 15px 0;
+
+  }
+
+  h1 {
+	  font-size: 50px;
+  }
+
+
+//Header 
+
+header {
+	// .noob-border(coral);
+	max-height: 50%;
+	max-width: 880px;
+	// border: 1px solid lightcoral;
+	display: flex;
+	flex-direction: column;
+	// justify-content: flex-end;
+	margin: 0px auto;
+	.header-content {
+		max-width: 880px;
+		max-height: 100%;
+		background-color: #E9ECEF;
+	
+		display: flex;
+		flex-direction: column;
+		
+		justify-content: center;
+		margin: 20px;
+		padding: 50px 25px;
+		.slogan {
+			border-bottom: 1px solid rgb(203, 207, 211);
+			padding-bottom: 25px;
+			margin-bottom: 25px;
+		}
+		button{
+			.reset-btn();
+			font-size: 80%;
+			color: white;
+			width: 125px;
+			margin-top: 15px;
+			min-height: 30px;
+			background-color: @resumegrey;
+		}
+	}
+	img {
+		width: 20%;
+	}
+	nav {
+		// border: 2px solid lightblue;
+		max-width: 880px;
+		height: 45px;
+		.align(bottom);
+		margin-left:auto;
+		
+		a {
+			
+			
+			margin: 20px;
+		}
+	}	
+}
+
+main {
+	// .noob-border(coral);
+	height: 40%;
+	max-width: 880px;
+	max-height: 50%;
+
+	// border: 1px solid lightcoral;
+	display: flex;
+	margin: 0px auto;
+	flex-wrap: wrap;
+	.top-content {
+		
+		// padding: 10px;
+		display: inline-flex;
+		// margin: 25px;
+		max-width: 100%;
+		margin: 20px;
+		justify-content: space-between;
+		
+		.about-me {
+			
+			// border: 1px solid lightcoral;
+			display: block;
+			width: 40%;
+		}
+		.skills {
+			padding: 10px;
+			width: 40%;
+		}
+	}
+	
+}
+
+footer {
+	// .noob-border(green);
+	width: 880px;
+	max-height: 50%;
+
+	display: flex;
+	height: 10%;
+	margin: 0px auto 0px auto;
+	.custom-layout(flex, center, center);
+	background-color: @resumegrey;
+	div {
+		margin: 20px;
+		color: white;
+		text-align: center;
+	}
+}
